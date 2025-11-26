@@ -5,15 +5,50 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/color_main_background"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/navButtonsContainer"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginStart="@dimen/spacing_main"
+        android:layout_marginEnd="@dimen/spacing_main"
+        android:layout_marginBottom="@dimen/spacing_main"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCategories"
+            style="@style/StyleNavButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/nav_categories"
+            android:textAllCaps="true"
+            android:backgroundTint="@color/nav_button_categories" />
+
+        <Space
+            android:layout_width="@dimen/spacing_main_half"
+            android:layout_height="0dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnFavorites"
+            style="@style/StyleNavButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/nav_favorites"
+            android:backgroundTint="@color/nav_button_favorites"
+            app:icon="@drawable/ic_heart_empty"
+            app:iconGravity="textEnd"
+            app:iconPadding="@dimen/spacing_main_half"
+            android:textAllCaps="true"
+            app:iconTint="@color/nav_button_text" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

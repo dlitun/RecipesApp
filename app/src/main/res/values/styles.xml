@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="StyleTitle14" parent="@style/TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/text_14</item>
+        <item name="android:fontFamily">@font/montserrat_alternates_semi_bold</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/nav_button_text</item>
+    </style>
+
+    <style name="StyleNavButton" parent="@style/Widget.Material3.Button">
+        <item name="android:textAppearance">@style/StyleTitle14</item>
+        <item name="cornerRadius">8dp</item>
+    </style>
+</resources>

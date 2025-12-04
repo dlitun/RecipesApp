@@ -15,37 +15,35 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
-        android:layout_marginHorizontal="@dimen/spacing_main"
-        android:layout_marginBottom="@dimen/spacing_main"
+        android:layout_marginHorizontal="@dimen/spacing_16"
+        android:layout_marginBottom="@dimen/spacing_8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <com.google.android.material.button.MaterialButton
+        <Button
             android:id="@+id/btnCategories"
-            style="@style/NavButtonStyle"
+            style="@style/StyleNavButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginEnd="@dimen/spacing_2"
             android:text="@string/title_categories"
-            app:textAppearance="@style/TextTitle14"
+            android:textAppearance="@style/StyleTitle14"
             android:backgroundTint="@color/nav_button_categories_color" />
 
-        <com.google.android.material.button.MaterialButton
+        <Button
             android:id="@+id/btnFavorites"
-            style="@style/NavButtonStyle"
+            style="@style/StyleNavButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/spacing_main_half"
             android:layout_weight="1"
+            android:layout_marginStart="@dimen/spacing_2"
             android:text="@string/title_favorites"
-            app:textAppearance="@style/TextTitle14"
-            app:icon="@drawable/ic_heart_empty"
-            app:iconGravity="textEnd"
-            app:iconPadding="@dimen/spacing_main_half"
-            app:iconTint="@color/nav_button_text_color"
-            android:backgroundTint="@color/nav_button_favorites_color" />
-
+            android:textAppearance="@style/StyleTitle14"
+            android:drawableEnd="@drawable/ic_heart_empty"
+            android:backgroundTint="@color/nav_button_favorites_color"
+            android:tint="@color/nav_button_text_color" />
 
     </LinearLayout>
 

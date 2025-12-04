@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupSystemBars() {
-        val bgColor = ContextCompat.getColor(this, R.color.color_main_background)
+        val bgColor = ContextCompat.getColor(this, R.color.main_background_color)
         window.statusBarColor = bgColor
         window.navigationBarColor = bgColor
     }

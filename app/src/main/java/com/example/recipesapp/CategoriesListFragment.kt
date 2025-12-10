@@ -10,7 +10,7 @@ import com.example.recipesapp.databinding.FragmentListCategoriesBinding
 class CategoriesListFragment : Fragment() {
 
     private var _binding: FragmentListCategoriesBinding? = null
-    private val binding get() = _binding!!
+    private val binding get() = _binding ?: error("Binding is null")
 
     override fun onCreateView(
         inflater: LayoutInflater,

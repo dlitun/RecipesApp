@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         if (savedInstanceState == null) {
             supportFragmentManager.commit {
                 setReorderingAllowed(true)
-                add(R.id.mainContainer, CategoriesListFragment())
+                add<CategoriesListFragment>(R.id.mainContainer)
             }
         }
     }

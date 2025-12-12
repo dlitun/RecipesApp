@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
 
     private var _binding: ActivityMainBinding? = null
     private val binding
-        get() = _binding ?: throw IllegalStateException("ActivityMainBinding is null")
+        get() = _binding ?: error("ActivityMainBinding is null")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,10 +28,24 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        binding.btnCategories.setOnClickListener {
+            supportFragmentManager.commit {
+                setReorderingAllowed(true)
+                replace(R.id.mainContainer, CategoriesListFragment())
+            }
+        }
+
+        binding.btnFavorites.setOnClickListener {
+            supportFragmentManager.commit {
+                setReorderingAllowed(true)
+                replace(R.id.mainContainer, FavoritesFragment())
+            }
+        }
+
         if (savedInstanceState == null) {
             supportFragmentManager.commit {
                 setReorderingAllowed(true)
-                add<CategoriesListFragment>(R.id.mainContainer)
+                add(R.id.mainContainer, CategoriesListFragment())
             }
         }
     }

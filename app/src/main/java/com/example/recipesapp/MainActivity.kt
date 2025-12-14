@@ -5,14 +5,16 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.add
 import androidx.fragment.app.commit
+import androidx.fragment.app.replace
 import com.example.recipesapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     private var _binding: ActivityMainBinding? = null
     private val binding
-        get() = _binding ?: throw IllegalStateException("ActivityMainBinding is null")
+        get() = _binding ?: error("ActivityMainBinding is null")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,10 +24,24 @@ class MainActivity : AppCompatActivity() {
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+
+        binding.btnCategories.setOnClickListener {
+            supportFragmentManager.commit {
+                setReorderingAllowed(true)
+                replace<CategoriesListFragment>(R.id.mainContainer)
+            }
+        }
+
+        binding.btnFavorites.setOnClickListener {
+            supportFragmentManager.commit {
+                setReorderingAllowed(true)
+                replace<FavoritesFragment>(R.id.mainContainer)
+            }
         }
 
         if (savedInstanceState == null) {

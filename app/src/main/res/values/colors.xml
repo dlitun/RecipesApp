@@ -2,6 +2,8 @@
 <resources>
     <color name="black_color">#FF000000</color>
     <color name="white_color">#FFFFFFFF</color>
+    <color name="text_primary">#5F3678</color>
+    <color name="text_secondary">#666666</color>
     <color name="main_background_color">#F4FAFF</color>
     <color name="nav_button_categories_color">#525DC0</color>
     <color name="nav_button_favorites_color">#E13E3E</color>

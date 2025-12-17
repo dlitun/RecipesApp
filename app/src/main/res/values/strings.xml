@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">RecipesApp</string>
+
     <string name="title_categories">Категории</string>
     <string name="title_favorites">Избранное</string>
+
+    <string name="categories_header_image">Изображение заголовка экрана категорий</string>
+    <string name="category_image">Изображение категории</string>
+
 </resources>

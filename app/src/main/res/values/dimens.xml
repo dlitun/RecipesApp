@@ -7,16 +7,12 @@
     <dimen name="spacing_12">12dp</dimen>
     <dimen name="spacing_16">16dp</dimen>
 
-    <dimen name="corner_small_8">8dp</dimen>
+    <dimen name="corner_small">8dp</dimen>
 
-    <dimen name="header_height">220dp</dimen>
-    <dimen name="badge_corner_radius">8dp</dimen>
-
-    <dimen name="card_corner_radius">8dp</dimen>
     <dimen name="card_elevation">2dp</dimen>
 
+    <dimen name="header_height">220dp</dimen>
     <dimen name="category_image_height">130dp</dimen>
-    <dimen name="category_item_margin_vertical">16dp</dimen>
 
     <dimen name="text_20">20sp</dimen>
     <dimen name="text_14">14sp</dimen>

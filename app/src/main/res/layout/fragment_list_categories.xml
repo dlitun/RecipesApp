@@ -33,8 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing_16"
             android:layout_marginBottom="@dimen/spacing_16"
-            android:paddingHorizontal="@dimen/spacing_10"
-            android:paddingVertical="@dimen/spacing_10"
+            android:padding="@dimen/spacing_10"
             android:text="@string/title_categories"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
@@ -44,10 +43,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvCategories"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginHorizontal="@dimen/spacing_8"
-        android:layout_marginTop="@dimen/spacing_16"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/spacing_8"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="2"
         tools:itemCount="6"

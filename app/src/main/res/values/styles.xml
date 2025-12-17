@@ -13,4 +13,27 @@
         <item name="cornerRadius">@dimen/corner_small_8</item>
     </style>
 
+    <style name="StyleHeaderBadge">
+        <item name="android:background">@drawable/bg_header_title</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:fontFamily">@font/montserrat_alternates_semi_bold</item>
+        <item name="android:textSize">@dimen/text_20</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="StyleCategoryTitle">
+        <item name="android:textSize">@dimen/text_14</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:fontFamily">@font/montserrat_alternates_semi_bold</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="StyleCategoryDescription">
+        <item name="android:textSize">@dimen/text_12</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+    </style>
+
 </resources>

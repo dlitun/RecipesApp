@@ -10,7 +10,7 @@ import com.example.recipesapp.databinding.FragmentListCategoriesBinding
 class CategoriesListFragment : Fragment() {
 
     private var _binding: FragmentListCategoriesBinding? = null
-    private val binding get() = _binding ?: error("Binding is null")
+    private val binding get() = _binding ?: error("FragmentListCategoriesBinding is null")
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -19,6 +19,17 @@ class CategoriesListFragment : Fragment() {
     ): View {
         _binding = FragmentListCategoriesBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initRecycler()
+    }
+
+    private fun initRecycler() {
+        val categories = STUB.getCategories()
+        val adapter = CategoriesListAdapter(categories)
+        binding.rvCategories.adapter = adapter
     }
 
     override fun onDestroyView() {

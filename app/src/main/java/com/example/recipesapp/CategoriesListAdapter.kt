@@ -3,6 +3,7 @@ package com.example.recipesapp
 import android.graphics.drawable.Drawable
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipesapp.databinding.ItemCategoryBinding
@@ -11,7 +12,17 @@ class CategoriesListAdapter(
     private val dataSet: List<Category>
 ) : RecyclerView.Adapter<CategoriesListAdapter.ViewHolder>() {
 
-    class ViewHolder(itemView: android.view.View) : RecyclerView.ViewHolder(itemView) {
+    interface OnItemClickListener {
+        fun onItemClick(category: Category)
+    }
+
+    private var itemClickListener: OnItemClickListener? = null
+
+    fun setOnItemClickListener(listener: OnItemClickListener) {
+        itemClickListener = listener
+    }
+
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val binding: ItemCategoryBinding = ItemCategoryBinding.bind(itemView)
     }
 
@@ -34,7 +45,11 @@ class CategoriesListAdapter(
                 holder.binding.ivCategory.setImageDrawable(drawable)
             }
         } catch (e: Exception) {
-            Log.e("CategoriesListAdapter", "Error loading image from assets: ${item.imageUrl}", e)
+            Log.e("CategoriesListAdapter", "Error loading image: ${item.imageUrl}", e)
+        }
+
+        holder.itemView.setOnClickListener {
+            itemClickListener?.onItemClick(item)
         }
     }
 
